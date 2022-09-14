@@ -46,7 +46,9 @@ def power(x, n):
 
 
 def factorial(n):
-    '''Recursive function that returns the factorial of n'''
+    '''Recursive function that returns the factorial of n\n
+    Reference on factorial and recursion:
+    https://www.sciencedirect.com/topics/computer-science/factorial-function'''
     if n == 1:
         return n
     else:
