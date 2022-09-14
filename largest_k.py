@@ -42,7 +42,8 @@ def main():
     else:
         largest = arithmeticProgression(input)
         if largest > 8:
-            print(f"{largest} is the largest K such that 0+2+4+6+...{largest} < {input}")
+            print(f"{largest} is the largest K such that 0+2+4+6+..", end="")
+            print(f"{largest} < {input}")
         else:
             print(f"{largest} is the largest K such that ", end="")
             for i in range(0, largest, 2):
