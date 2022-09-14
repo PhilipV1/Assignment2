@@ -38,6 +38,7 @@ def main():
 
     if input < 0:
         print("Integer is not positive. Program terminating!")
+        exit()
     else:
         largest = arithmeticProgression(input)
         if largest > 8:
