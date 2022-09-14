@@ -18,8 +18,8 @@ def userinput():
     return number
 
 
-# Check if the given number is prime up to sqrt(n)
 def isPrime(number):
+    '''Check if the given number is prime up to sqrt(n)'''
     if number == 1 or number < 1:
         return False
     if number == 2:
@@ -34,8 +34,8 @@ def isPrime(number):
     return True
 
 
-# Append the first n primes based on max input
 def primeUpTo(max, primeList):
+    '''Append the first n primes in primeList based on max input'''
     counter = 1
     number = 3
     primeList.append(2)
@@ -63,7 +63,6 @@ def main():
         if counter == row:
             print("")
             counter = 0
-    # for i in range (1, len(primeList)):
 
 
 if __name__ == "__main__":
