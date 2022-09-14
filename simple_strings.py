@@ -6,7 +6,7 @@ def first_last(s):
 
 
 def char_symbol_number(s):
-    '''Counts the number of characters, symbols and numbers in given string'''
+    '''Returns the number of characters, symbols and numbers in given string'''
     symbol_counter = 0
     char_counter = 0
     num_counter = 0
