@@ -2,6 +2,7 @@ import random as rd
 
 
 def rand_strings():
+    '''Returns a random string from the list in the function'''
     string_list = [
         "Well of course",
         "Absolutely not",

@@ -9,8 +9,8 @@ def main():
     print(f"The sum of the even numbers are: {sumEven(even_array)}")
 
 
-# Calculates the sum of all even numbers up to 100
 def sumEven(array):
+    '''Returns the sum of all even number in given array'''
     sum = 0
     for element in (array):
         sum += element
