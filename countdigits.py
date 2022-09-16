@@ -2,7 +2,7 @@
 def user_input():
     while True:
         try:
-            user_input = int(input("Enter a big positive integer"))
+            user_input = int(input("Enter a big positive integer: "))
             break
         except ValueError:
             print("This is not a valid integer")
