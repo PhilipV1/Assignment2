@@ -4,16 +4,6 @@ def coord_to_index(x, y):
     return ((x - 1) + (y - 1) * 3)
 
 
-def index_to_coord(i):
-    '''Returns x, y coordinates based on index'''
-    # Index to coordinate formula: x = index % width
-    # alternatively if you have y, x = index - (width * y)
-    # y = index / width
-    x = (i % 3) + 1
-    y = (i // 3) + 1
-    return (x, y)
-
-
 def win_check(player, game_grid):
     '''Checks if a player has won by row, column or diagonal'''
     # Check for row win
@@ -41,7 +31,7 @@ def win_check(player, game_grid):
 
 def get_symbol(i):
     '''Returns symbol based on what number is in the game grid'''
-    symbols = ["-", "X", "O"]
+    symbols = ["X", "O", "-"]
     return symbols[i]
 
 
@@ -70,13 +60,26 @@ def draw_board(grid):
         print()
 
 
-def user_input(player, position):
+def check_available(x, y, game_grid):
+    '''Check if the given (x, y) position is available'''
+    g_index = coord_to_index(x, y)
+    if game_grid[g_index] != 2:
+        return False
+    return True
+
+
+def user_input(player, game_grid):
+    '''Takes an int input that is either 1, 2 or 3'''
     symbol = get_symbol(player)
     while True:
         try:
-            p = int(input(f"Player {symbol}, which {position} do you play? "))
-            if 0 < p < 4:
-                return p
+            x1 = int(input(f"Player {symbol}, which row do you play? "))
+            y1 = int(input(f"Player {symbol}, wich column do you play? "))
+            if 0 < x1 < 4 and 0 < y1 < 4:
+                if check_available(x1, y1, game_grid):
+                    return x1, y1
+                else:
+                    print("Position is taken please try again")
             else:
                 print("Please input 1, 2 or 3")
         except ValueError:
@@ -85,30 +88,35 @@ def user_input(player, position):
 
 def main():
     game_grid = [
-        0, 0, 0,
-        0, 0, 0,
-        0, 0, 0
+        2, 2, 2,
+        2, 2, 2,
+        2, 2, 2
     ]
-    # Storing player moves as tuples
-    # player_one = []
-    # player_two = []
-    current_player = 1
+    current_player = 0
     run_game = True
-    # Use min(game_grid) to check if board is full
+
+    # Use max(game_grid) to check if board is full
     # If board is full and win_check does not return True, announce a draw
     while run_game:
         draw_board(game_grid)
 
-        if min(game_grid) != 0:
+        if max(game_grid) != 2:
             run_game = False
-            win_check(current_player, game_grid)
+            print("It's a draw!")
+        else:
+            # Updates the game board with the players move
+            row, column = user_input(current_player, game_grid)
+            g_index = coord_to_index(row, column)
 
-        row = user_input(current_player, "row")
-        column = user_input(current_player, "column")
+            # Check if the move was a winning move
+            game_grid[g_index] = current_player
+            if win_check(current_player, game_grid):
+                run_game = False
+                draw_board(game_grid)
+                print(f"Player {get_symbol(current_player)} has won!")
 
-        debug_temp = input("Do you want to continue? y/n")
-        if debug_temp == "n":
-            run_game = False
+            # Switch players
+            current_player = (current_player + 1) % 2
 
 
 if __name__ == "__main__":
