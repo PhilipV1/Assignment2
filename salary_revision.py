@@ -1,6 +1,3 @@
-import math
-
-
 def average(salaries):
     '''Calculates the average of given salaries'''
     avg = 0
