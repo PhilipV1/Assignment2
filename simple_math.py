@@ -41,8 +41,7 @@ def is_even(n):
 
 def power(x, n):
     '''Returns X to the power of N'''
-    x = x**n
-    return x
+    return x**n
 
 
 def factorial(n):
