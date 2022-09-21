@@ -68,7 +68,7 @@ def check_available(x, y, game_grid):
     return True
 
 
-def user_input(player, game_grid):
+def player_move(player, game_grid):
     '''Takes an int input that is either 1, 2 or 3'''
     symbol = get_symbol(player)
     while True:
@@ -105,7 +105,7 @@ def main():
             print("It's a draw!")
         else:
             # Updates the game board with the players move
-            row, column = user_input(current_player, game_grid)
+            row, column = player_move(current_player, game_grid)
             g_index = coord_to_index(row, column)
 
             # Check if the move was a winning move
