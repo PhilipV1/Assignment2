@@ -15,21 +15,17 @@ def deck_builder():
 
 
 def shuffle_deck(deck):
-    new_deck = [0 for i in range(len(deck))]
+    '''Durstenfeld version of Fisher-Yates shuffle
+    ref: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle'''
     length = len(deck)
-    loop_check = True
+    roll = length
 
-    for element in deck:
-        while loop_check:
-            rand_index = rd.randint(0, length-1)
-            if new_deck[rand_index] == 0:
-                new_deck[rand_index] = element
-                loop_check = False
-            else:
-                rand_index = rd.randint(0, length-1)
-        loop_check = True
+    for i in range(0, length):
+        index_from = rd.randint(0, roll-1)
+        deck[index_from], deck[roll - 1] = deck[roll - 1], deck[index_from]
+        roll -= 1
 
-    return new_deck
+    return deck
 
 
 def main():
