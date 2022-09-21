@@ -55,19 +55,19 @@ def factorial(n):
 
 
 def main():
-    print(f"35 plus 1 = {inc(35)}")
-    print(f"76 plus 22 = {inc_with(76, 22)}")
+    print(f"41 plus 1 = {inc(41)}")
+    print(f"76 plus 22 = {inc_with(30, 12)}")
 
-    print(f"66 minus 1 = {dec(66)}")
-    print(f"143 minus 27 = {dec_with(143, 27)}")
+    print(f"66 minus 1 = {dec(43)}")
+    print(f"143 minus 27 = {dec_with(52, 10)}")
 
-    print(f"Which is greater, 59 or 23?: {greatest(59, 23)}")
+    print(f"Which is greater, 59 or 23?: {greatest(24, 42)}")
 
-    print(f"Is 33 even?: {is_even(33)}")
+    print(f"Is 33 even?: {is_even(42)}")
 
-    print(f"4 to the power of 5 = {power(4, 5)}")
+    print(f"4 to the power of 5 = {power(2, 16)}")
 
-    print(f"Factorial of 6 = {factorial(6)}")
+    print(f"Factorial of 6 = {factorial(5)}")
 
 
 if __name__ == "__main__":

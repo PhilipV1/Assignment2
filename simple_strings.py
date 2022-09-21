@@ -26,7 +26,7 @@ def char_types(s):
     '''Returns the number of vowels and consonants in a string'''
     consonants = "lpmknjbhyvgtcfrxdzswq"
     consonant_amount = 0
-    vowels = "aeiou"
+    vowels = "aeiouy"
     vowel_amount = 0
 
     for char in s:
@@ -39,8 +39,8 @@ def char_types(s):
 
 
 def main():
-    first_string = "Number of vowels and consonants!"
-    second_string = "You may not pick 1... You have to pick 2!!"
+    first_string = "May the Force be with you!"
+    second_string = "I am 1 with the force, not 2..."
     # Using casefold function to make all characters lower case
     vowels, consonants = char_types(first_string.casefold())
     chars, symbols, numbers = char_symbol_number(second_string)

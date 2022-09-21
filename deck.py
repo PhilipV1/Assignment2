@@ -14,9 +14,27 @@ def deck_builder():
     return deck
 
 
+def shuffle_deck(deck):
+    new_deck = [0 for i in range(len(deck))]
+    length = len(deck)
+    loop_check = True
+
+    for element in deck:
+        while loop_check:
+            rand_index = rd.randint(0, length-1)
+            if new_deck[rand_index] == 0:
+                new_deck[rand_index] = element
+                loop_check = False
+            else:
+                rand_index = rd.randint(0, length-1)
+        loop_check = True
+
+    return new_deck
+
+
 def main():
     deck = deck_builder()
-    rd.shuffle(deck)
+    deck = shuffle_deck(deck)
     for i in range(0, 5):
         print(f"{deck[i][1]} of {deck[i][0]}")
 
