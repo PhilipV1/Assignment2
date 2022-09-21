@@ -5,7 +5,7 @@ def get_number(a, b, c, d):
     return abcd
 
 
-def palindromic_num():
+def find_digits():
     '''Calculates the  four digit palindromic number'''
     number = 0
     a = 0
@@ -35,9 +35,9 @@ def palindromic_num():
 
 
 def main():
-    palindrome = palindromic_num()
+    digits = find_digits()
 
-    print(f"The four digit number is: {palindrome}")
+    print(f"The four digit number is: {digits}")
 
 
 if __name__ == "__main__":

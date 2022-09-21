@@ -4,7 +4,7 @@ import math
 
 # Calculates the approximation of pi using the relation
 # between a circle area and square area pi/4
-# That means that out of N points pi/4 should fall inside the circle
+# That means that out of N points, pi/4 should fall inside the circle
 # Hence pi = (4*amount)/N
 def main():
     points = []
@@ -13,7 +13,7 @@ def main():
     circle_points = 0
 
     for element in n:
-        for i in range(0, element+1):
+        for i in range(0, element):
             points.append((rd.random(), rd.random()))
         for p in points:
             if (p[0]**2)+(p[1]**2) < radius**2:
