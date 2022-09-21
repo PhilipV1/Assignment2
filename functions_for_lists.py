@@ -17,6 +17,7 @@ def square(lst):
 
 
 def sublist(lst, start, stop):
+    '''Returns the value in a list from index start to stop'''
     temp_list = []
     for i in range(start, stop):
         temp_list.append(lst[i])

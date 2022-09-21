@@ -17,7 +17,7 @@ def userInput():
 
 def arithmeticProgression(number):
     '''Calculates what the largest number is in an arithmetic sequence
-    so that K < number'''
+    such that the sum of 2+4+6...+K < number'''
     max = 0
     current = 0
     previous = 0

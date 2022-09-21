@@ -6,7 +6,7 @@ def deck_builder():
     values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
     colour = ["Spades", "Clubs", "Hearts", "Diamonds"]
     deck = []
-
+    # Loops through each colour and adds one of each value to that colour
     for col in colour:
         for val in values:
             deck.append([col, val])
