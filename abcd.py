@@ -6,7 +6,8 @@ def get_number(a, b, c, d):
 
 
 def find_digits():
-    '''Calculates the  four digit palindromic number'''
+    '''Calculates the  four digit number
+    where D = 4A'''
     number = 0
     a = 0
     b = 0
