@@ -3,7 +3,7 @@ import random as rd
 
 def deck_builder():
     '''Creates a deck of 52 cards with all colours and values'''
-    values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+    values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
     colour = ["Spades", "Clubs", "Hearts", "Diamonds"]
     deck = []
     # Loops through each colour and adds one of each value to that colour
@@ -31,6 +31,7 @@ def shuffle_deck(deck):
 def main():
     deck = deck_builder()
     deck = shuffle_deck(deck)
+
     for i in range(0, 5):
         print(f"{deck[i][1]} of {deck[i][0]}")
 

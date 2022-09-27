@@ -17,13 +17,12 @@ def is_palindrome(s):
 
 
 def main():
-    text_list = ["Ni talar bra latin", "Hello World", "Was it a rat I saw"]
+    input_str = input("Enter a string: ")
 
-    for element in text_list:
-        if is_palindrome(element):
-            print(f"{element} is a palindrome")
-        else:
-            print(f"{element} is not a palindrome")
+    if is_palindrome(input_str):
+        print(f"{input_str} is a palindrome")
+    else:
+        print(f"{input_str} is not a palindrome")
 
 
 if __name__ == "__main__":
