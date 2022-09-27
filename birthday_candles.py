@@ -7,7 +7,9 @@ def main():
         if i > candle_box[1]:
             # Taking advantage of floor division rounding down
             # using the negative number and then negate it back to positive
-            # to effectively round up
+            # to effectively round up.
+            # Removing the left over candles to see how many boxes needed
+            # to satisfy current birthday
             box_amount = -(-(i - candle_box[1]) // 24)
             candle_box[0] += box_amount
             candle_box[1] += (box_amount * 24)

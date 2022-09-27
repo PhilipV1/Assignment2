@@ -12,6 +12,7 @@ def main():
     radius = 1
     circle_points = 0
 
+
     for element in n:
         for i in range(0, element):
             points.append((rd.random(), rd.random()))
