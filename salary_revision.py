@@ -13,7 +13,7 @@ def median(salaries):
     if len(salaries) % 2 != 0:
         return salaries[(len(salaries)//2)]
     else:
-        # If there is an even number it takes the average between the middle two
+        # If there is an even length it takes the average of the middle two
         first_median = salaries[(len(salaries)//2) - 1]
         second_median = salaries[(len(salaries) // 2)]
         return (first_median + second_median) / 2
