@@ -18,11 +18,11 @@ def shuffle_deck(deck):
     '''Durstenfeld version of Fisher-Yates shuffle
     ref: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle'''
     length = len(deck)
-    roll = length
+    roll = length - 1
 
     for i in range(0, length):
-        index_from = rd.randint(0, roll-1)
-        deck[index_from], deck[roll - 1] = deck[roll - 1], deck[index_from]
+        index_from = rd.randint(0, roll)
+        deck[index_from], deck[roll] = deck[roll], deck[index_from]
         roll -= 1
 
     return deck
