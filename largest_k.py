@@ -1,7 +1,8 @@
 # This program calculates arithmetic progression based on input value
 
-# Function takes an input value with type int
+
 def userInput():
+    '''Takes user int as a user input'''
     loop_check = True
 
     while loop_check:
@@ -14,8 +15,9 @@ def userInput():
     return user_input
 
 
-# Calculates the largest number in arithmetic progression
 def arithmeticProgression(number):
+    '''Calculates what the largest number is in an arithmetic sequence
+    such that the sum of 2+4+6...+K < number'''
     max = 0
     current = 0
     previous = 0
@@ -38,10 +40,12 @@ def main():
 
     if input < 0:
         print("Integer is not positive. Program terminating!")
+        exit()
     else:
         largest = arithmeticProgression(input)
         if largest > 8:
-            print(f"{largest} is the largest K such that 0+2+4+6+...{largest} < {input}")
+            print(f"{largest} is the largest K such that 0+2+4+6+..", end="")
+            print(f"{largest} < {input}")
         else:
             print(f"{largest} is the largest K such that ", end="")
             for i in range(0, largest, 2):
